@@ -23,7 +23,7 @@ gaps inner 10 # Size border of display
 gaps outer -2 # Size outer border
 
 # Picom Configuration
-exec-always --no-startup-id picom -b --config  ~/.config/i3/configuration/picom.conf
+exec --no-startup-id picom -b --config  $HOME/.config/i3/configuration/picom.conf
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -39,6 +39,9 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
+
+# Volumen incon applet
+exec --no-startup-id volumeicon -d hw:0
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
