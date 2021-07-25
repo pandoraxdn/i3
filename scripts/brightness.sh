@@ -56,9 +56,7 @@ valid ()
 
 }
 
-type=$1 # Parametro a recibir en el script
-
-if [ $type = "up" ]
+if [ $1 = "up" ]
 
 then
 
@@ -76,7 +74,7 @@ then
 
     fi
 
-elif [ $type = "down" ]
+elif [ $1 = "down" ]
 
 then
 
