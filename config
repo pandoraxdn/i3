@@ -66,7 +66,7 @@ bindsym $mod+Shift+q kill
 bindsym $mod+q kill
 
 # Open file manager
-bindsym $mod+Shift+Return exec pcmanfm
+bindsym $mod+Shift+Return exec thunar
 
 # start dmenu (a program launcher)
 #bindsym $mod+Shift+d exec --no-startup-id dmenu_run
@@ -224,14 +224,14 @@ bar {
 
         colors {
 
-            background #581845
+            background #181b28
             separator  #716D6D
             statusline #FFFFFF
 
             # colorclass          border  backgr. text
-            focused_workspace     #716D6D #A569BD #D0D3D4
-            active_workspace      #716D6D #A569BD #D0D3D4
-            inactive_workspace    #716D6D #512E5F #D0D3D4
+            focused_workspace     #716D6D #7a52c0 #D0D3D4
+            active_workspace      #716D6D #7a52c0 #D0D3D4
+            inactive_workspace    #716D6D #343c44 #D0D3D4
             urgent_workspace      #716D6D #E81F1F #D0D3D4
 
         }
@@ -242,13 +242,13 @@ bar {
 
 # Window color settings
 # class                 border  backgr. text    indicator
-client.focused          #716D6D #A569BD #FFFFFF #A569BD
-client.unfocused        #716D6D #512E5F #FFFFFF #512E5F
+client.focused          #716D6D #7a52c0 #FFFFFF #7a52c0
+client.unfocused        #716D6D #343c44 #FFFFFF #343c44
 client.focused_inactive #716D6D #7E4595 #FFFFFF #7E4595
-client.placeholder      #716D6D #A569BD #FFFFFF #A569BD
+client.placeholder      #716D6D #7a52c0 #FFFFFF #7a52c0
 client.urgent           #716D6D #E81F1F #FFFFFF #E81F1F
 
-client.background       #A569BD
+client.background       #181b28
 
 # Add nitrogen to start i3
 exec nitrogen --restore
