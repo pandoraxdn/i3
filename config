@@ -18,7 +18,7 @@ set $mod Mod4
 font pango:monospace 8
 
 # Gaps configuration
-for_window [class=".*"] border pixel 3 # Border color
+for_window [class=".*"] border pixel 4 # Border color
 gaps inner 10 # Size border of display
 gaps outer -2 # Size outer border
 
@@ -26,7 +26,10 @@ gaps outer -2 # Size outer border
 exec --no-startup-id picom -b --config  $HOME/.config/i3/configuration/picom.conf
 
 # Polybar launch file .sh
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh --hack
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh --cuts
+
+# Flameshot start
+exec --no-startup-id flameshot
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -138,16 +141,16 @@ bindsym $mod+a focus parent
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $workspace1 "1: "
-set $workspace2 "2: "
-set $workspace3 "3: "
-set $workspace4 "4: "
-set $workspace5 "5: "
-set $workspace6 "6: "
-set $workspace7 "7: "
-set $workspace8 "8: "
-set $workspace9 "9: "
-set $workspace10 "10: "
+set $workspace1 1
+set $workspace2 2
+set $workspace3 3
+set $workspace4 4
+set $workspace5 5
+set $workspace6 6
+set $workspace7 7
+set $workspace8 8
+set $workspace9 9
+set $workspace10 10
 
 # switch to workspace
 bindsym $mod+1 workspace $workspace1
@@ -207,13 +210,19 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-# Se añadio polybar
-#bar {
-        #position bottom
+bar {
 
-        #font pango:DejaVu Sans Mono 9
+        height 25
 
-        #i3bar_command i3bar --transparency
+        position bottom
+
+        mode hide
+
+        hidden_state hide
+
+        font pango:DejaVu Sans Mono 9
+
+        i3bar_command i3bar --transparency
 
         #separator_symbol ""
 
@@ -224,21 +233,21 @@ bindsym $mod+r mode "resize"
         #status_command i3blocks -c ~/.config/i3/conf/i3blocks-original.conf
         #status_command i3blocks -c ~/.config/i3/conf/i3blocks-awesome.conf
 
-        #colors {
+        colors {
 
-            #background #181b28
-            #separator  #FFFFFF
-            #statusline #FFFFFF
+            background #00000000
+            separator  #00000000
+            statusline #00000000
 
-            # colorclass          border  backgr. text
-            #focused_workspace     #716D6D #7a52c0 #D0D3D4
-            #active_workspace      #716D6D #7a52c0 #D0D3D4
-            #inactive_workspace    #716D6D #343c44 #D0D3D4
-            #urgent_workspace      #716D6D #E81F1F #D0D3D4
+            # colorclass          border    backgr.     text
+            focused_workspace     #00000000 #00000000   #00000000
+            active_workspace      #00000000 #00000000   #00000000
+            inactive_workspace    #00000000 #00000000   #00000000
+            urgent_workspace      #00000000 #6C3483     #FFFFFF
 
-        #}
+        }
 
-#}
+}
 
 #Theme name : Pandora Xdn
 
