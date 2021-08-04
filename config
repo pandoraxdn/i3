@@ -29,7 +29,7 @@ exec --no-startup-id picom -b --config  $HOME/.config/i3/configuration/picom.con
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh --cuts
 
 # Flameshot start
-#exec --no-startup-id flameshot
+exec --no-startup-id flameshot
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
