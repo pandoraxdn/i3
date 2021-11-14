@@ -18,7 +18,7 @@ set $mod Mod4
 font pango:monospace 8
 
 # Gaps configuration
-for_window [class=".*"] border pixel 4 # Border color
+for_window [class=".*"] border pixel 2 # Border color
 gaps inner 10 # Size border of display
 gaps outer -2 # Size outer border
 
@@ -57,8 +57,8 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ to
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle
 
 # Brightness (brillo)
-bindsym XF86MonBrightnessUp exec --no-startup-id sh ~/.config/i3/scripts/brightness-brightnessctl.sh up
-bindsym XF86MonBrightnessDown exec --no-startup-id sh ~/.config/i3/scripts/brightness-brightnessctl.sh down
+bindsym XF86MonBrightnessUp exec --no-startup-id sh ~/.config/i3/scripts/brightness-backlight.sh up
+bindsym XF86MonBrightnessDown exec --no-startup-id sh ~/.config/i3/scripts/brightness-backlight.sh down
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -72,11 +72,11 @@ bindsym $mod+Shift+q kill
 bindsym $mod+q kill
 
 # Open file manager
-bindsym $mod+Shift+Return exec nautilus
+bindsym $mod+Shift+Return exec pcmanfm
 
 # start dmenu (a program launcher)
 #bindsym $mod+Shift+d exec --no-startup-id dmenu_run
-bindsym $mod+shift+d exec --no-startup-id dmenu_run -i -nb '#181b28' -nf '#7a52c0' -sb '#7a52c0' -sf '#181b28' -fn 'NotoMonoRegular:bold:pixelsize=13'
+bindsym $mod+shift+d exec --no-startup-id dmenu_run -i -nb '#181b28' -nf '#7a52c0' -sb '#7a52c0' -sf '#181b28' -fn 'NotoMonoRegular:bold:pixelsize=15'
 
 # start rofi
 bindsym $mod+F9 exec --no-startup-id rofi -show drun -fullscreen -font "Noto Sans 13"
@@ -141,16 +141,16 @@ bindsym $mod+a focus parent
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $workspace1 1
-set $workspace2 2
-set $workspace3 3
-set $workspace4 4
-set $workspace5 5
-set $workspace6 6
-set $workspace7 7
-set $workspace8 8
-set $workspace9 9
-set $workspace10 10
+set $workspace1 I
+set $workspace2 II
+set $workspace3 III
+set $workspace4 IV
+set $workspace5 V
+set $workspace6 VI
+set $workspace7 VII
+set $workspace8 VIII
+set $workspace9 IX
+set $workspace10 X
 
 # switch to workspace
 bindsym $mod+1 workspace $workspace1
@@ -211,6 +211,7 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 bar {
+        id bar-1
 
         height 25
 
@@ -223,15 +224,6 @@ bar {
         font pango:DejaVu Sans Mono 9
 
         i3bar_command i3bar --transparency
-
-        #separator_symbol ""
-
-        #status_command i3status i3blocks
-        #status_command i3status -c ~/.config/i3/conf/i3status.conf
-        #status_command i3blocks -c ~/.config/i3/configuration/i3blocks.conf
-        #status_command i3blocks -c ~/.config/i3/conf/i3blocks-rainbow.conf
-        #status_command i3blocks -c ~/.config/i3/conf/i3blocks-original.conf
-        #status_command i3blocks -c ~/.config/i3/conf/i3blocks-awesome.conf
 
         colors {
 
@@ -249,6 +241,44 @@ bar {
 
 }
 
+bar {
+
+        id bar-2
+
+        output VGA-1
+
+        height 25
+
+        position top
+
+        font pango:DejaVu Sans Mono 9
+
+        #separator_symbol ""
+
+        i3bar_command i3bar --transparency
+
+        #status_command i3status i3blocks
+        #status_command i3status -c ~/.config/i3/conf/i3status.conf
+        #status_command i3blocks -c ~/.config/i3/configuration/i3blocks.conf
+        #status_command i3blocks -c ~/.config/i3/conf/i3blocks-rainbow.conf
+        #status_command i3blocks -c ~/.config/i3/conf/i3blocks-original.conf
+        #status_command i3blocks -c ~/.config/i3/conf/i3blocks-awesome.conf
+
+        colors {
+
+            background #0000005F
+            separator  #FFFFFF
+            statusline #FFFFFF
+
+            # colorclass          border        backgr.     text
+            focused_workspace     #0000005F     #7a52c0     #FFFFFF
+            active_workspace      #0000005F     #0000005F   #000000
+            inactive_workspace    #0000005F     #0000005F   #000000
+            urgent_workspace      #0000005F     #0000005F   #000000
+
+        }
+
+}
 #Theme name : Pandora Xdn
 
 # Window color settings
@@ -265,7 +295,7 @@ client.background       #181b28
 #exec nitrogen --restore
 
 # Add feh wallpaper
-#exec_always --no-startup-id feh --bg-fill ~/Imágenes/wallpaper.png
+exec_always --no-startup-id feh --bg-fill ~/Imágenes/anime-wallpaper.jpg
 
 #Press windows + x - check toolbar for next choices
 bindsym $mod+X mode "$mode_system"

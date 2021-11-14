@@ -4,7 +4,8 @@ case "$1" in
 
     lock)
 
-        betterlockscreen -l dimblur -- --timestr="%H:%M"
+        #betterlockscreen -l dimblur -- --timestr="%H:%M"
+        i3lock
 
         ;;
 
