@@ -20,7 +20,7 @@ font pango:monospace 8
 # Gaps configuration
 for_window [class=".*"] border pixel 2 # Border color
 gaps inner 10 # Size border of display
-gaps outer -2 # Size outer border
+gaps outer -4 # Size outer border
 
 # Picom Configuration
 exec --no-startup-id picom -b --config  $HOME/.config/i3/configuration/picom.conf
@@ -70,6 +70,9 @@ bindsym $mod+Return exec sakura
 # kill focused window
 bindsym $mod+Shift+q kill
 bindsym $mod+q kill
+
+# Change wallpaper
+bindsym $mod+Shift+w exec --no-startup-id feh --bg-fill --randomize ~/Imágenes/wallpaper/*
 
 # Open file manager
 bindsym $mod+Shift+Return exec pcmanfm
@@ -295,7 +298,7 @@ client.background       #181b28
 #exec nitrogen --restore
 
 # Add feh wallpaper
-exec_always --no-startup-id feh --bg-fill ~/Imágenes/anime-wallpaper.jpg
+exec_always --no-startup-id feh --bg-fill --randomize ~/Imágenes/wallpaper/* #--keep-zoom-vp
 
 #Press windows + x - check toolbar for next choices
 bindsym $mod+X mode "$mode_system"
