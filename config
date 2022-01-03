@@ -15,10 +15,10 @@ set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:monospace 8
+font Menlo-Regular 8
 
 # Gaps configuration
-for_window [class=".*"] border pixel 2 # Border color
+for_window [class=".*"] border pixel 4 # Border color
 gaps inner 10 # Size border of display
 gaps outer -4 # Size outer border
 
@@ -28,8 +28,14 @@ exec --no-startup-id picom -b --config  $HOME/.config/i3/configuration/picom.con
 # Polybar launch file .sh
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh --cuts
 
+# Usb automount
+exec_always --no-startup-id udiskie -Ns &
+
 # Flameshot start
 exec --no-startup-id flameshot
+
+# Glava start
+#exec --no-startup-id glava --desktop &
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -57,8 +63,8 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ to
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle
 
 # Brightness (brillo)
-bindsym XF86MonBrightnessUp exec --no-startup-id sh ~/.config/i3/scripts/brightness-backlight.sh up
-bindsym XF86MonBrightnessDown exec --no-startup-id sh ~/.config/i3/scripts/brightness-backlight.sh down
+bindsym XF86MonBrightnessUp exec --no-startup-id sh ~/.config/i3/scripts/brightness-brightnessctl.sh up
+bindsym XF86MonBrightnessDown exec --no-startup-id sh ~/.config/i3/scripts/brightness-brightnessctl.sh down
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -298,7 +304,7 @@ client.background       #181b28
 #exec nitrogen --restore
 
 # Add feh wallpaper
-exec_always --no-startup-id feh --bg-fill --randomize ~/Imágenes/wallpaper/* #--keep-zoom-vp
+exec_always --no-startup-id feh --bg-fill ~/Imágenes/wallpaper/839098.jpg #--keep-zoom-vp
 
 #Press windows + x - check toolbar for next choices
 bindsym $mod+X mode "$mode_system"
