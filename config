@@ -304,7 +304,7 @@ client.background       #181b28
 #exec nitrogen --restore
 
 # Add feh wallpaper
-exec_always --no-startup-id feh --bg-fill ~/Imágenes/wallpaper/839098.jpg #--keep-zoom-vp
+exec_always --no-startup-id feh --bg-fill ~/Imágenes/wallpaper/1051013.png #--keep-zoom-vp
 
 #Press windows + x - check toolbar for next choices
 bindsym $mod+X mode "$mode_system"
