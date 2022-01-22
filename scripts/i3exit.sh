@@ -5,7 +5,7 @@ case "$1" in
     lock)
 
         #betterlockscreen -l dimblur -- --timestr="%H:%M"
-        i3lock
+        i3lock -i ~/Imágenes/wallpaper/1051013.png
 
         ;;
 
