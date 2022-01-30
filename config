@@ -18,7 +18,7 @@ set $mod Mod4
 font Menlo-Regular 8
 
 # Gaps configuration
-for_window [class=".*"] border pixel 4 # Border color
+for_window [class=".*"] border pixel 3 # Border color
 gaps inner 10 # Size border of display
 gaps outer -4 # Size outer border
 
@@ -26,7 +26,7 @@ gaps outer -4 # Size outer border
 exec --no-startup-id picom -b --config  $HOME/.config/i3/configuration/picom.conf
 
 # Polybar launch file .sh
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh --cuts
+exec_always --no-startup-id $HOME/.config/i3/polybar/launch.sh
 
 # Usb automount
 exec_always --no-startup-id udiskie -Ns &
@@ -304,7 +304,7 @@ client.background       #181b28
 #exec nitrogen --restore
 
 # Add feh wallpaper
-exec_always --no-startup-id feh --bg-fill ~/Imágenes/wallpaper/1152775.png #--keep-zoom-vp
+exec_always --no-startup-id feh --bg-fill ~/Imágenes/wallpaper/wallpaperflare.com_wallpaper.jpg #--keep-zoom-vp
 
 #Press windows + x - check toolbar for next choices
 bindsym $mod+X mode "$mode_system"

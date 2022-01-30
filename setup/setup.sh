@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 FDIR="$HOME/.local/share/fonts"
 
 # Install Fonts                                                                                                                                          │⣄         
@@ -41,7 +43,7 @@ install_pkgs()
         yay -S i3-gaps i3status i3lock i3blocks picom polybar udiskie flameshot network-manager-applet volumeicon sakura feh pcmanfm dmenu rofi brightnessctl sxiv
 	elif [[ $REPLY == "3" ]]
     then
-	    cat <<- EOF
+        echo "
             environment.pathsToLink = [ "/libexec" ];
             services.xserver = {
                 enable = true;
@@ -83,7 +85,8 @@ install_pkgs()
                         ];
                 };
               };
-	    EOF
+        " > $HOME/i3-desktop.nix
+        echo "Archivo creado en $HOME/i3-desktop.nix"
 	elif [[ $REPLY == "4" ]]
 	then
         sudo apt install i3-gaps i3status i3lock i3blocks picom polybar udiskie flameshot network-manager-applet volumeicon sakura feh pcmanfm dmenu rofi brightnessctl sxiv
