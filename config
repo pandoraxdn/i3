@@ -29,7 +29,7 @@ exec --no-startup-id picom -b --config  $HOME/.config/i3/configuration/picom.con
 exec_always --no-startup-id $HOME/.config/i3/polybar/launch.sh
 
 # Usb automount
-exec_always --no-startup-id udiskie -Ns &
+exec --no-startup-id udiskie -Ns &
 
 # Flameshot start
 exec --no-startup-id flameshot
@@ -77,8 +77,12 @@ bindsym $mod+Return exec sakura
 bindsym $mod+Shift+q kill
 bindsym $mod+q kill
 
-# Change wallpaper
-bindsym $mod+Shift+w exec --no-startup-id feh --bg-fill --randomize ~/Imágenes/wallpaper/*
+# Add nitrogen to start i3
+#exec nitrogen --restore
+
+# Set wallapaper feh
+#--keep-zoom-vp
+exec_always --no-startup-id sh ~/.config/i3/scripts/wallpaper-desktop.sh default
 
 # Open file manager
 bindsym $mod+Shift+Return exec pcmanfm
@@ -300,12 +304,6 @@ client.urgent           #716D6D #E81F1F #FFFFFF #E81F1F
 
 client.background       #181b28
 
-# Add nitrogen to start i3
-#exec nitrogen --restore
-
-# Add feh wallpaper
-exec_always --no-startup-id feh --bg-fill ~/Imágenes/wallpaper/wallpaperflare.com_wallpaper.jpg #--keep-zoom-vp
-
 #Press windows + x - check toolbar for next choices
 bindsym $mod+X mode "$mode_system"
 
@@ -318,6 +316,23 @@ mode "$mode_system" {
     bindsym r exec --no-startup-id ~/.config/i3/scripts/i3exit.sh reboot, mode "default"
     bindsym a exec --no-startup-id ~/.config/i3/scripts/i3exit.sh shutdown, mode "default"
 
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+#Press windows + x - check toolbar for next choices
+bindsym $mod+Shift+w mode "$mode_system"
+
+set $mode_system [Wallpaper] : (1) Aleatorio, (2) Default [Ajuste] : (3) Centrado, (4) Extendido, (5) Máximo, (6) Escalado, (7) Repetido
+mode "$mode_system" {
+    bindsym 1 exec --no-startup-id ~/.config/i3/scripts/wallpaper-desktop.sh random, mode "default"
+    bindsym 2 exec --no-startup-id ~/.config/i3/scripts/wallpaper-desktop.sh default, mode "default"
+    bindsym 3 exec --no-startup-id ~/.config/i3/scripts/wallpaper-desktop.sh center, mode "default"
+    bindsym 4 exec --no-startup-id ~/.config/i3/scripts/wallpaper-desktop.sh extended, mode "default"
+    bindsym 5 exec --no-startup-id ~/.config/i3/scripts/wallpaper-desktop.sh max, mode "default"
+    bindsym 6 exec --no-startup-id ~/.config/i3/scripts/wallpaper-desktop.sh scale, mode "default"
+    bindsym 7 exec --no-startup-id ~/.config/i3/scripts/wallpaper-desktop.sh repeat, mode "default"
     # back to normal: Enter or Escape
     bindsym Return mode "default"
     bindsym Escape mode "default"
