@@ -321,18 +321,19 @@ mode "$mode_system" {
     bindsym Escape mode "default"
 }
 
-#Press windows + x - check toolbar for next choices
+#Press windows + shift + w - check toolbar for next choices
 bindsym $mod+Shift+w mode "$mode_system"
 
-set $mode_system [Wallpaper] : (1) Aleatorio, (2) Default [Ajuste] : (3) Centrado, (4) Extendido, (5) Máximo, (6) Escalado, (7) Repetido
+set $mode_system [Wallpaper] : (1) Aleatorio, (2) Default [Ajuste] : (3) Extendido, (4) Centrado, (5) Máximo, (6) Escalado, (7) Repetido
 mode "$mode_system" {
-    bindsym 1 exec --no-startup-id ~/.config/i3/scripts/wallpaper-desktop.sh random, mode "default"
-    bindsym 2 exec --no-startup-id ~/.config/i3/scripts/wallpaper-desktop.sh default, mode "default"
-    bindsym 3 exec --no-startup-id ~/.config/i3/scripts/wallpaper-desktop.sh center, mode "default"
-    bindsym 4 exec --no-startup-id ~/.config/i3/scripts/wallpaper-desktop.sh extended, mode "default"
-    bindsym 5 exec --no-startup-id ~/.config/i3/scripts/wallpaper-desktop.sh max, mode "default"
-    bindsym 6 exec --no-startup-id ~/.config/i3/scripts/wallpaper-desktop.sh scale, mode "default"
-    bindsym 7 exec --no-startup-id ~/.config/i3/scripts/wallpaper-desktop.sh repeat, mode "default"
+    bindsym 1 exec --no-startup-id ~/.config/i3/scripts/wallpaper-desktop.sh random
+    bindsym 2 exec --no-startup-id ~/.config/i3/scripts/wallpaper-desktop.sh default
+    bindsym 3 exec --no-startup-id ~/.config/i3/scripts/wallpaper-desktop.sh extended
+    bindsym 4 exec --no-startup-id ~/.config/i3/scripts/wallpaper-desktop.sh center
+    bindsym 5 exec --no-startup-id ~/.config/i3/scripts/wallpaper-desktop.sh max
+    bindsym 6 exec --no-startup-id ~/.config/i3/scripts/wallpaper-desktop.sh scale
+    bindsym 7 exec --no-startup-id ~/.config/i3/scripts/wallpaper-desktop.sh repeat
+
     # back to normal: Enter or Escape
     bindsym Return mode "default"
     bindsym Escape mode "default"
