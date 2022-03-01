@@ -322,10 +322,10 @@ mode "$mode_system" {
 }
 
 #Press windows + shift + w - check toolbar for next choices
-bindsym $mod+Shift+w mode "$mode_system"
+bindsym $mod+Shift+w mode "$mode_wallpaper"
 
-set $mode_system [Wallpaper] : (1) Aleatorio, (2) Default [Ajuste] : (3) Extendido, (4) Centrado, (5) Máximo, (6) Escalado, (7) Repetido
-mode "$mode_system" {
+set $mode_wallpaper [Wallpaper] : (1) Aleatorio, (2) Default [Ajuste] : (3) Extendido, (4) Centrado, (5) Máximo, (6) Escalado, (7) Repetido
+mode "$mode_wallpaper" {
     bindsym 1 exec --no-startup-id ~/.config/i3/scripts/wallpaper-desktop.sh random
     bindsym 2 exec --no-startup-id ~/.config/i3/scripts/wallpaper-desktop.sh default
     bindsym 3 exec --no-startup-id ~/.config/i3/scripts/wallpaper-desktop.sh extended
