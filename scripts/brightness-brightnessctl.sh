@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 #!/bin/bash
 
 max_br=7812; min_br=0; porcent=390 # 7812 * 0.05 = 390  // 5%
