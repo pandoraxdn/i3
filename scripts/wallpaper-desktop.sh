@@ -2,7 +2,7 @@
 #!/bin/bash
 log=`cat ~/.config/i3/scripts/.log-wallpaper`
 
-wallpaper="$HOME/Imágenes/wallpaper/wallpaperflare.com_wallpaper81.jpg"
+wallpaper="$HOME/Imágenes/wallpaper/85674729_p0.jpg"
 
 case $1 in
 

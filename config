@@ -254,21 +254,21 @@ bar {
 
 }
 
-bar {
+#bar {
 
-        id bar-2
+        #id bar-2
 
-        output VGA-1
+        #output VGA-1
 
-        height 25
+        #height 25
 
-        position top
+        #position top
 
-        font pango:DejaVu Sans Mono 9
+        #font pango:DejaVu Sans Mono 9
 
         #separator_symbol ""
 
-        i3bar_command i3bar --transparency
+        #i3bar_command i3bar --transparency
 
         #status_command i3status i3blocks
         #status_command i3status -c ~/.config/i3/conf/i3status.conf
@@ -277,21 +277,22 @@ bar {
         #status_command i3blocks -c ~/.config/i3/conf/i3blocks-original.conf
         #status_command i3blocks -c ~/.config/i3/conf/i3blocks-awesome.conf
 
-        colors {
+        #colors {
 
-            background #0000005F
-            separator  #FFFFFF
-            statusline #FFFFFF
+            #background #0000005F
+            #separator  #FFFFFF
+            #statusline #FFFFFF
 
             # colorclass          border        backgr.     text
-            focused_workspace     #0000005F     #7a52c0     #FFFFFF
-            active_workspace      #0000005F     #0000005F   #000000
-            inactive_workspace    #0000005F     #0000005F   #000000
-            urgent_workspace      #0000005F     #0000005F   #000000
+            #focused_workspace     #0000005F     #7a52c0     #FFFFFF
+            #active_workspace      #0000005F     #0000005F   #000000
+            #inactive_workspace    #0000005F     #0000005F   #000000
+            #urgent_workspace      #0000005F     #0000005F   #000000
 
-        }
+        #}
 
-}
+#}
+
 #Theme name : Pandora Xdn
 
 # Window color settings

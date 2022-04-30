@@ -1,6 +1,10 @@
 #!/usr/bin/env bash
 
+# Dir to copy fonts
 FDIR="$HOME/.local/share/fonts"
+
+# Source of files fonts
+DIR="$HOME/.config/i3/setup"
 
 # Install Fonts                                                                                                                                          │⣄         
 install_fonts()
@@ -90,7 +94,7 @@ install_pkgs()
 	elif [[ $REPLY == "4" ]]
 	then
         sudo apt install i3-gaps i3status i3lock i3blocks picom polybar udiskie flameshot network-manager-applet volumeicon sakura feh pcmanfm dmenu rofi brightnessctl sxiv
-	elif [[ $REPLY == "4" ]]
+	elif [[ $REPLY == "5" ]]
 	then
         install_fonts    
 	else
