@@ -6,9 +6,11 @@
 ## Twitter : @adi1090x
 
 dir="~/.config/i3/polybar/cuts/scripts/rofi"
-uptime=$(uptime -p | sed -e 's/arriba //g')
+uptime=$(uptime | tr "," " " | cut -f6-8 -d" ")
 
-rofi_command="rofi -theme $dir/powermenu.rasi"
+#rofi_command="rofi -theme $dir/powermenu.rasi"
+
+rofi_command="rofi -theme $dir/rounded-purple-simple.rasi"
 
 # Options
 shutdown=" Apagar"
@@ -23,12 +25,12 @@ confirm_exit() {
 		-i\
 		-no-fixed-num-lines\
 		-p "¿Estás seguro? : "\
-		-theme $dir/confirm.rasi
+		-theme $dir/rounded-purple-simple.rasi
 }
 
 # Message
 msg() {
-	rofi -theme "$dir/message.rasi" -e "Opciones disponibles  -  yes / y / no / n"
+	rofi -theme "$dir/rounded-purple-simple.rasi" -e "Opciones disponibles  -  yes / y / no / n"
 }
 
 # Variable passed to rofi

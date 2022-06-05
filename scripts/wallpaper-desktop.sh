@@ -1,22 +1,44 @@
 #!/usr/bin/env bash
 #!/bin/bash
-log=`cat ~/.config/i3/scripts/.log-wallpaper`
 
-wallpaper="$HOME/Imágenes/wallpaper/85674729_p0.jpg"
+wallpaper="$HOME/Imágenes/wallpaper/1236174.jpg"
+
 
 case $1 in
 
     random)
+
         aleatory=`find ~/Imágenes/wallpaper -type f | shuf -n 1`
+
         cp /dev/null ~/.config/i3/scripts/.log-wallpaper
+
         echo $aleatory > ~/.config/i3/scripts/.log-wallpaper
+
         feh --bg-fill $aleatory --no-fehbg
+
     ;;
 
     default)
-        cp /dev/null ~/.config/i3/scripts/.log-wallpaper
-        echo $wallpaper > ~/.config/i3/scripts/.log-wallpaper
-        feh --bg-fill $wallpaper --no-fehbg
+
+        if [ -f ~/.config/i3/scripts/.log-wallpaper ]
+        then
+
+            log=`cat ~/.config/i3/scripts/.log-wallpaper`
+
+            echo $log > ~/.config/i3/scripts/.log-wallpaper
+
+            feh --bg-fill $log --no-fehbg
+
+        else
+
+            cp /dev/null ~/.config/i3/scripts/.log-wallpaper
+
+            echo $wallpaper > ~/.config/i3/scripts/.log-wallpaper
+
+            feh --bg-fill $wallpaper --no-fehbg
+
+        fi
+
     ;;
 
 
