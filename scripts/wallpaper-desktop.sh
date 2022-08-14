@@ -18,6 +18,16 @@ case $1 in
 
     ;;
 
+    delete-log)
+
+        if [ -f ~/.config/i3/scripts/.log-wallpaper ]
+        then
+
+            rm ~/.config/i3/scripts/.log-wallpaper
+
+        fi
+    ;;
+
     default)
 
         if [ -f ~/.config/i3/scripts/.log-wallpaper ]

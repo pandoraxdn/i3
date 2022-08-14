@@ -22,6 +22,9 @@ for_window [class=".*"] border pixel 3
 gaps inner 10
 gaps outer -4
 
+# Set keyboard
+exec --no-startup-id setxkbmap es
+
 # Picom Configuration
 exec --no-startup-id picom -b --config  $HOME/.config/i3/configuration/picom.conf
 
@@ -38,7 +41,7 @@ exec --no-startup-id udiskie -Ns &
 exec --no-startup-id flameshot
 
 # Glava start
-exec --no-startup-id glava --desktop &
+#exec --no-startup-id glava --desktop &
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -84,7 +87,6 @@ bindsym $mod+q kill
 #exec nitrogen --restore
 
 # Set wallapaper feh
-#--keep-zoom-vp
 exec_always --no-startup-id sh ~/.config/i3/scripts/wallpaper-desktop.sh default
 
 # Open file manager
