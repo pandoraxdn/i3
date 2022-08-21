@@ -117,5 +117,6 @@ ${color1}${hr}${color}
 ${color1}[S]+[Shift]+Q${alignr}${color2}Stop application${color}
 ${color1}[S]+x${alignr}${color2}Exit${color}
 ${color1}${hr}${color}
-${color1}Gentoo versión${color}${alignr}${color2}${execi 6000 uname -r }${color}
+${color1}NixOs versión${color}
+${color2}${execi 6000 nixos-version }${color}
 ]];
