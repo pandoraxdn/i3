@@ -66,8 +66,8 @@ conky.config = {
 
 	default_color = '#ff0000',  				
 	color1 = '#FFFFFF',
-	color2 = '#CD9CF9',
-	color3 = '#cccccc',
+	color2 = '#A63247',
+	color3 = '#CCCCCC',
 	color4 = '#BDBDBD',
 	color5 = '#CCCCCC',
 	color6 = '#aa0000',

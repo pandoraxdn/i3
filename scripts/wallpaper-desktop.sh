@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 #!/bin/bash
 
-wallpaper="$HOME/Imágenes/wallpaper/1236174.jpg"
+wallpaper="$HOME/Imágenes/wallpaper/91905189_p0.jpg"
 
 
 case $1 in
@@ -26,6 +26,7 @@ case $1 in
             rm ~/.config/i3/scripts/.log-wallpaper
 
         fi
+
     ;;
 
     default)
@@ -35,13 +36,9 @@ case $1 in
 
             log=`cat ~/.config/i3/scripts/.log-wallpaper`
 
-            echo $log > ~/.config/i3/scripts/.log-wallpaper
-
             feh --bg-fill $log --no-fehbg
 
         else
-
-            cp /dev/null ~/.config/i3/scripts/.log-wallpaper
 
             echo $wallpaper > ~/.config/i3/scripts/.log-wallpaper
 
@@ -53,25 +50,88 @@ case $1 in
 
 
     center)
-        feh --bg-center $log --no-fehbg
+
+        if [ -f ~/.config/i3/scripts/.log-wallpaper ]
+        then
+
+            log=`cat ~/.config/i3/scripts/.log-wallpaper`
+
+            feh --bg-center $log --no-fehbg
+
+        else
+
+            feh --bg-center $wallpaper --no-fehbg
+
+        fi
+
     ;;
 
     extended)
-        feh --bg-fill $log --no-fehbg
+
+        if [ -f ~/.config/i3/scripts/.log-wallpaper ]
+        then
+
+            log=`cat ~/.config/i3/scripts/.log-wallpaper`
+
+            feh --bg-fill $log --no-fehbg
+
+        else
+
+            feh --bg-fill $wallpaper --no-fehbg
+
+        fi
+
     ;;
 
     max)
-        feh --bg-max $log --no-fehbg
+
+        if [ -f ~/.config/i3/scripts/.log-wallpaper ]
+        then
+
+            log=`cat ~/.config/i3/scripts/.log-wallpaper`
+
+            feh --bg-max $log --no-fehbg
+
+        else
+
+            feh --bg-max $wallpaper --no-fehbg
+
+        fi
+
     ;;
 
     scale)
 
-        feh --bg-scale $log --no-fehbg
+        if [ -f ~/.config/i3/scripts/.log-wallpaper ]
+        then
+
+            log=`cat ~/.config/i3/scripts/.log-wallpaper`
+
+            feh --bg-scale $log --no-fehbg
+
+        else
+
+            feh --bg-scale $wallpaper --no-fehbg
+
+        fi
+
     ;;
 
     repeat)
 
-        feh --bg-tile $log --no-fehbg
+        if [ -f ~/.config/i3/scripts/.log-wallpaper ]
+        then
+
+            log=`cat ~/.config/i3/scripts/.log-wallpaper`
+
+            feh --bg-tile $log --no-fehbg
+
+        else
+
+            feh --bg-tile $wallpaper --no-fehbg
+
+        fi
+
     ;;
 
 

@@ -94,9 +94,9 @@ bindsym $mod+Shift+Return exec pcmanfm
 
 # start dmenu (a program launcher)
 #bindsym $mod+Shift+d exec --no-startup-id dmenu_run
-bindsym $mod+shift+d exec --no-startup-id dmenu_run -i -nb '#181b28' -nf '#7a52c0' -sb '#7a52c0' -sf '#181b28' -fn 'NotoMonoRegular:bold:pixelsize=15'
-bindsym $mod+d exec --no-startup-id rofi -show drun -font "Noto Sans 10" -theme ~/.config/i3/polybar/cuts/scripts/rofi/rounded-purple.rasi
-bindsym $mod+b exec --no-startup-id rofi -show window -font "Noto Sans 10" -theme ~/.config/i3/polybar/cuts/scripts/rofi/rounded-purple.rasi
+bindsym $mod+shift+d exec --no-startup-id dmenu_run -i -nb '#181b28' -nf '#A63247' -sb '#A63247' -sf '#181b28' -fn 'NotoMonoRegular:bold:pixelsize=15'
+bindsym $mod+d exec --no-startup-id rofi -show drun -font "Noto Sans 10" -theme ~/.config/i3/polybar/cuts/scripts/rofi/rounded-red.rasi
+bindsym $mod+b exec --no-startup-id rofi -show window -font "Noto Sans 10" -theme ~/.config/i3/polybar/cuts/scripts/rofi/rounded-red.rasi
 
 # start rofi
 #bindsym $mod+F9 exec --no-startup-id rofi -show drun -fullscreen -font "Noto Sans 13"
@@ -237,9 +237,9 @@ bar {
 
         position bottom
 
-        mode hide
+        #mode hide
 
-        hidden_state hide
+        #hidden_state hide
 
         font pango:DejaVu Sans Mono 9
 
@@ -300,17 +300,17 @@ bar {
 
 #}
 
-#Theme name : Pandora Xdn
+#Theme name : Pandora Xdn red
 
 # Window color settings
 # class                 border  backgr. text    indicator
-client.focused          #716D6D #7a52c0 #FFFFFF #7a52c0
-client.unfocused        #716D6D #343c44 #FFFFFF #343c44
-client.focused_inactive #716D6D #7E4595 #FFFFFF #7E4595
-client.placeholder      #716D6D #7a52c0 #FFFFFF #7a52c0
-client.urgent           #716D6D #E81F1F #FFFFFF #E81F1F
+client.focused          #716D6D #A63247 #FFFFFF #A63247
+client.unfocused        #716D6D #73322C #FFFFFF #73322C
+client.focused_inactive #716D6D #402727 #FFFFFF #402727
+client.placeholder      #716D6D #A63247 #FFFFFF #A63247
+client.urgent           #716D6D #402727 #FFFFFF #402727
 
-client.background       #181b28
+client.background       #A63247
 
 #Press windows + x - check toolbar for next choices
 bindsym $mod+X mode "$mode_system"
